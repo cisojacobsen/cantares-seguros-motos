@@ -24,14 +24,14 @@ export function Header() {
             <img 
               src={logoCantares} 
               alt="Cantares Corretora de Seguros" 
-              className="h-10 md:h-12 w-auto"
+              className="h-10 md:h-14 w-auto min-w-[120px] md:min-w-[160px]"
               loading="eager"
             />
-            <div className="h-8 w-px bg-border hidden sm:block" />
+            <div className="h-8 w-px bg-border" />
             <img 
               src={logoSuhai} 
               alt="Suhai Seguradora - Corretor Autorizado" 
-              className="h-8 md:h-10 w-auto hidden sm:block"
+              className="h-6 md:h-8 w-auto min-w-[48px] md:min-w-[64px]"
               loading="eager"
             />
           </div>

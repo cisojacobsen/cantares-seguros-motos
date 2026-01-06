@@ -51,25 +51,6 @@ export function CoverageSection() {
           </p>
         </div>
 
-        {/* Timeline Steps */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-12">
-          {steps.map((step, index) => (
-            <div key={step.number} className="flex items-center gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center font-bold text-lg text-primary-foreground">
-                  {step.number}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground">{step.description}</p>
-                </div>
-              </div>
-              {index < steps.length - 1 && (
-                <ArrowRight className="w-6 h-6 text-muted-foreground hidden md:block" />
-              )}
-            </div>
-          ))}
-        </div>
 
         {/* Coverage Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
@@ -102,7 +83,7 @@ export function CoverageSection() {
         </div>
 
         {/* Features List */}
-        <div className="bg-card rounded-2xl p-6 md:p-8 border border-border mb-12">
+        <div className="bg-card rounded-2xl p-6 md:p-8 border border-border mb-8">
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center md:text-left">
             <div className="flex items-center gap-3">
               <CheckCircle className="w-6 h-6 text-lime-dark" />
@@ -114,6 +95,26 @@ export function CoverageSection() {
               <span className="text-foreground font-medium">Simulação gratuita e imediata, sem compromisso</span>
             </div>
           </div>
+        </div>
+
+        {/* Timeline Steps - Moved before CTA */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-10">
+          {steps.map((step, index) => (
+            <div key={step.number} className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center font-bold text-lg text-primary-foreground">
+                  {step.number}
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground">{step.description}</p>
+                </div>
+              </div>
+              {index < steps.length - 1 && (
+                <ArrowRight className="w-6 h-6 text-muted-foreground hidden md:block" />
+              )}
+            </div>
+          ))}
         </div>
 
         {/* CTA */}
