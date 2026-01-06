@@ -10,20 +10,20 @@ export function Footer() {
       {/* Main Footer */}
       <div className="section-padding py-12 md:py-16">
         <div className="container-narrow mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center gap-4 mb-6">
                 <img 
                   src={logoCantares} 
                   alt="Cantares Corretora" 
-                  className="h-12 w-auto brightness-0 invert"
+                  className="h-12 w-auto"
                   loading="lazy"
                 />
                 <img 
                   src={logoSuhai} 
                   alt="Suhai Seguradora" 
-                  className="h-10 w-auto brightness-0 invert"
+                  className="h-10 w-auto"
                   loading="lazy"
                 />
               </div>
@@ -59,10 +59,10 @@ export function Footer() {
                 <li>
                   <a 
                     href="mailto:contato@cantarescorretora.com.br"
-                    className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
+                    className="flex items-start gap-3 text-background/70 hover:text-background transition-colors"
                   >
-                    <Mail className="w-5 h-5" />
-                    contato@cantarescorretora.com.br
+                    <Mail className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                    <span className="break-all">contato@cantarescorretora.com.br</span>
                   </a>
                 </li>
                 <li className="flex items-center gap-3 text-background/70">
