@@ -1,8 +1,14 @@
-import { Phone, MessageCircle, Mail, Clock, Instagram, Facebook } from 'lucide-react';
-import logoCantares from '@/assets/logo-cantares-corretora.png';
-import logoSuhai from '@/assets/logo-suhai-seguradora.png';
-
-const WHATSAPP_LINK = "https://wa.me/5511930290043?text=ROBSON%20-%20CONSULTOR%20EM%20SEGUROS";
+import {
+  Phone,
+  MessageCircle,
+  Mail,
+  Clock,
+  Instagram,
+  Facebook,
+} from "lucide-react";
+import { WHATSAPP_LINK } from "./CallToAction";
+import logoCantares from "@/assets/logo-cantares-corretora.png";
+import logoSuhai from "@/assets/logo-suhai-seguradora.png";
 
 export function Footer() {
   return (
@@ -14,21 +20,22 @@ export function Footer() {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center gap-4 mb-6">
-                <img 
-                  src={logoCantares} 
-                  alt="Cantares Corretora" 
-                  className="h-12 w-auto"
+                <img
+                  src={logoCantares}
+                  alt="Cantares Corretora"
+                  className="h-16 w-auto rounded-sm"
                   loading="lazy"
                 />
-                <img 
-                  src={logoSuhai} 
-                  alt="Suhai Seguradora" 
-                  className="h-10 w-auto"
+                <img
+                  src={logoSuhai}
+                  alt="Suhai Seguradora"
+                  className="h-20 w-auto"
                   loading="lazy"
                 />
               </div>
               <p className="text-background/70 mb-4 max-w-md">
-                Cantares é corretor autorizado da Suhai Seguros, oferecendo as melhores soluções em seguro de motos para todo o Brasil.
+                Cantares é corretor autorizado da Suhai Seguros, oferecendo as
+                melhores soluções em seguro de motos para todo o Brasil.
               </p>
             </div>
 
@@ -37,8 +44,8 @@ export function Footer() {
               <h3 className="text-lg font-semibold mb-4">Fale Conosco</h3>
               <ul className="space-y-3">
                 <li>
-                  <a 
-                    href="tel:+551125450650" 
+                  <a
+                    href="tel:+551125450650"
                     className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
                   >
                     <Phone className="w-5 h-5" />
@@ -46,7 +53,7 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a 
+                  <a
                     href={WHATSAPP_LINK}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -57,27 +64,37 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a 
+                  <a
                     href="mailto:contato@cantarescorretora.com.br"
                     className="flex items-start gap-3 text-background/70 hover:text-background transition-colors"
                   >
                     <Mail className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                    <span className="break-all">contato@cantarescorretora.com.br</span>
+                    <span className="">contato@cantarescorretora.com.br</span>
                   </a>
                 </li>
                 <li className="flex items-center gap-3 text-background/70">
                   <Clock className="w-5 h-5" />
                   <span>Seg a Sex – 9h às 18h</span>
                 </li>
+                <li>
+                  <a
+                    href="https://www.cantarescorretora.com.br/politica-privacidade-cookies.php"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-background/70 hover:text-background transition-colors"
+                  >
+                    Política de Privacidade
+                  </a>
+                </li>
               </ul>
             </div>
 
             {/* Links */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Links</h3>
+              <h3 className="text-lg font-semibold mb-4">Siga nas Redes</h3>
               <ul className="space-y-3">
                 <li>
-                  <a 
+                  <a
                     href="https://www.instagram.com/cantarescorretora/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -88,7 +105,7 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a 
+                  <a
                     href="https://www.facebook.com/cantarescorretora/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -96,16 +113,6 @@ export function Footer() {
                   >
                     <Facebook className="w-5 h-5" />
                     Facebook
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://www.cantarescorretora.com.br/politica-privacidade-cookies.php"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-background/70 hover:text-background transition-colors"
-                  >
-                    Política de Privacidade
                   </a>
                 </li>
               </ul>

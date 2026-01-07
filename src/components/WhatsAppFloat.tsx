@@ -1,6 +1,5 @@
-import { MessageCircle } from 'lucide-react';
-
-const WHATSAPP_LINK = "https://wa.me/5511930290043?text=ROBSON%20-%20CONSULTOR%20EM%20SEGUROS";
+import { MessageCircle } from "lucide-react";
+import { WHATSAPP_LINK } from "./CallToAction";
 
 export function WhatsAppFloat() {
   return (

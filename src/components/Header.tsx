@@ -1,15 +1,14 @@
-import { useState } from 'react';
-import { Menu, X, MessageCircle } from 'lucide-react';
-import logoCantares from '@/assets/logo-cantares-corretora.png';
-import logoSuhai from '@/assets/logo-suhai-seguradora.png';
-
-const WHATSAPP_LINK = "https://wa.me/5511930290043?text=ROBSON%20-%20CONSULTOR%20EM%20SEGUROS";
+import { useState } from "react";
+import { Menu, X, MessageCircle } from "lucide-react";
+import { WHATSAPP_LINK } from "./CallToAction";
+import logoCantares from "@/assets/logo-cantares-corretora.png";
+import logoSuhai from "@/assets/logo-suhai-seguradora.png";
 
 const navItems = [
-  { label: 'Benefícios', href: '#beneficios' },
-  { label: 'Depoimentos', href: '#depoimentos' },
-  { label: 'Coberturas', href: '#coberturas' },
-  { label: 'Contato', href: '#contato' },
+  { label: "Benefícios", href: "#beneficios" },
+  { label: "Depoimentos", href: "#depoimentos" },
+  { label: "Coberturas", href: "#coberturas" },
+  { label: "Contato", href: "#contato" },
 ];
 
 export function Header() {
@@ -21,23 +20,26 @@ export function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logos */}
           <div className="flex items-center gap-3 md:gap-4">
-            <img 
-              src={logoCantares} 
-              alt="Cantares Corretora de Seguros" 
-              className="h-10 md:h-14 w-auto min-w-[120px] md:min-w-[160px]"
+            <img
+              src={logoCantares}
+              alt="Cantares Corretora de Seguros"
+              className="h-10 md:h-16 w-auto"
               loading="eager"
             />
             <div className="h-8 w-px bg-border" />
-            <img 
-              src={logoSuhai} 
-              alt="Suhai Seguradora - Corretor Autorizado" 
-              className="h-6 md:h-8 w-auto min-w-[48px] md:min-w-[64px]"
+            <img
+              src={logoSuhai}
+              alt="Suhai Seguradora - Corretor Autorizado"
+              className="h-10 md:h-16 w-auto"
               loading="eager"
             />
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8" aria-label="Menu principal">
+          <nav
+            className="hidden lg:flex items-center gap-8"
+            aria-label="Menu principal"
+          >
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -66,17 +68,21 @@ export function Header() {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden p-2 text-foreground"
-              aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+              aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={isMenuOpen}
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav 
+          <nav
             className="lg:hidden py-4 border-t border-border animate-fade-in"
             aria-label="Menu mobile"
           >

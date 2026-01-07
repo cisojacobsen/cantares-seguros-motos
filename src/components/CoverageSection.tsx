@@ -1,38 +1,45 @@
-import { Shield, Car, Flame, Wrench, MessageCircle, ArrowRight, CheckCircle } from 'lucide-react';
-import logoCantares from '@/assets/logo-cantares-corretora.png';
-import logoSuhai from '@/assets/logo-suhai-seguradora.png';
-
-const WHATSAPP_LINK = "https://wa.me/5511930290043?text=ROBSON%20-%20CONSULTOR%20EM%20SEGUROS";
+import {
+  Shield,
+  Car,
+  Flame,
+  Wrench,
+  MessageCircle,
+  ArrowRight,
+  CheckCircle,
+} from "lucide-react";
+import logoCantares from "@/assets/logo-cantares-corretora.png";
+import logoSuhai from "@/assets/logo-suhai-seguradora.png";
+import { CallToAction, WHATSAPP_LINK } from "./CallToAction";
 
 const steps = [
-  { number: '1', title: 'Cotação', description: 'Simule grátis online' },
-  { number: '2', title: 'Análise', description: 'Escolha o melhor plano' },
-  { number: '3', title: 'Proteção ativa', description: 'Sua moto protegida' },
+  { number: "1", title: "Cotação", description: "Simule grátis online" },
+  { number: "2", title: "Análise", description: "Escolha o melhor plano" },
+  { number: "3", title: "Proteção ativa", description: "Sua moto protegida" },
 ];
 
 const coverages = [
   {
     icon: Shield,
-    title: 'Roubo e furto',
-    description: 'Proteção básica contra roubo e furto da sua moto.',
+    title: "Roubo e furto",
+    description: "Proteção básica contra roubo e furto da sua moto.",
     popular: false,
   },
   {
     icon: Car,
-    title: 'Roubo, furto e perda total',
-    description: 'Cobertura completa incluindo acidentes com perda total.',
+    title: "Roubo, furto e perda total",
+    description: "Cobertura completa incluindo acidentes com perda total.",
     popular: true,
   },
   {
     icon: Flame,
-    title: 'Roubo, furto, perda total, incêndio e colisão',
-    description: 'Máxima proteção para sua moto em todas as situações.',
+    title: "Roubo, furto, perda total, incêndio e colisão",
+    description: "Máxima proteção para sua moto em todas as situações.",
     popular: false,
   },
   {
     icon: Wrench,
-    title: 'Planos personalizados',
-    description: 'Monte a cobertura ideal para seu perfil e necessidades.',
+    title: "Planos personalizados",
+    description: "Monte a cobertura ideal para seu perfil e necessidades.",
     popular: false,
   },
 ];
@@ -51,13 +58,14 @@ export function CoverageSection() {
           </p>
         </div>
 
-
         {/* Coverage Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {coverages.map((coverage, index) => (
-            <article 
+            <article
               key={coverage.title}
-              className={`card-coverage relative animate-fade-in-up ${coverage.popular ? 'border-primary ring-2 ring-primary/20' : ''}`}
+              className={`card-coverage relative animate-fade-in-up ${
+                coverage.popular ? "border-primary ring-2 ring-primary/20" : ""
+              }`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {coverage.popular && (
@@ -87,12 +95,16 @@ export function CoverageSection() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center md:text-left">
             <div className="flex items-center gap-3">
               <CheckCircle className="w-6 h-6 text-lime-dark" />
-              <span className="text-foreground font-medium">Guincho e assistência 24h em todo o Brasil</span>
+              <span className="text-foreground font-medium">
+                Guincho e assistência 24h em todo o Brasil
+              </span>
             </div>
             <div className="h-px w-full md:w-px md:h-6 bg-border" />
             <div className="flex items-center gap-3">
               <CheckCircle className="w-6 h-6 text-lime-dark" />
-              <span className="text-foreground font-medium">Simulação gratuita e imediata, sem compromisso</span>
+              <span className="text-foreground font-medium">
+                Simulação gratuita e imediata, sem compromisso
+              </span>
             </div>
           </div>
         </div>
@@ -106,8 +118,12 @@ export function CoverageSection() {
                   {step.number}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground">{step.description}</p>
+                  <h3 className="font-semibold text-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {step.description}
+                  </p>
                 </div>
               </div>
               {index < steps.length - 1 && (
@@ -118,33 +134,24 @@ export function CoverageSection() {
         </div>
 
         {/* CTA */}
-        <div className="text-center">
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-cta text-lg inline-flex"
-          >
-            <MessageCircle className="w-6 h-6" />
-            Falar com um especialista
-            <ArrowRight className="w-5 h-5" />
-          </a>
-          
-          <div className="flex items-center justify-center gap-4 mt-6">
-            <img 
-              src={logoCantares} 
-              alt="Cantares Corretora" 
-              className="h-8 w-auto opacity-70"
-              loading="lazy"
-            />
-            <img 
-              src={logoSuhai} 
-              alt="Suhai Seguradora" 
-              className="h-7 w-auto opacity-70"
-              loading="lazy"
-            />
-          </div>
-        </div>
+        <CallToAction
+          href={WHATSAPP_LINK}
+          title="Falar com um especialista"
+          leftIcon={<MessageCircle className="w-6 h-6" />}
+          rightIcon={<ArrowRight className="w-5 h-5" />}
+          logos={[
+            {
+              src: logoCantares,
+              alt: "Cantares Corretora",
+              className: "h-12 w-auto opacity-1 rounded-sm",
+            },
+            {
+              src: logoSuhai,
+              alt: "Suhai Seguradora",
+              className: "h-14 w-auto opacity-1",
+            },
+          ]}
+        />
       </div>
     </section>
   );

@@ -1,34 +1,38 @@
-import { Star, MessageCircle, ArrowRight } from 'lucide-react';
-import logoCantares from '@/assets/logo-cantares-corretora.png';
-import logoSuhai from '@/assets/logo-suhai-seguradora.png';
-
-const WHATSAPP_LINK = "https://wa.me/5511930290043?text=ROBSON%20-%20CONSULTOR%20EM%20SEGUROS";
+import { Star, MessageCircle, ArrowRight } from "lucide-react";
+import logoCantares from "@/assets/logo-cantares-corretora.png";
+import logoSuhai from "@/assets/logo-suhai-seguradora.png";
+import { CallToAction, WHATSAPP_LINK } from "./CallToAction";
 
 const testimonials = [
   {
-    name: 'Luis Fernando Grama',
+    name: "Luis Fernando Grama",
     rating: 5,
-    text: 'Empresa e equipe de confiança, desde que comprei a minha primeira moto, já saiu da concessionária com o seguro deles e até hoje mantenho a empresa no gerenciamento do meus seguros. Troco de moto, mas não troco de corretora. Recomendo muito a Cantares.',
+    text: "Empresa e equipe de confiança, desde que comprei a minha primeira moto, já saiu da concessionária com o seguro deles e até hoje mantenho a empresa no gerenciamento do meus seguros. Troco de moto, mas não troco de corretora. Recomendo muito a Cantares.",
   },
   {
-    name: 'Adão Freitas',
+    name: "Adão Freitas",
     rating: 5,
-    text: 'Olá, gostaria de recomendar a empresa Cantares corretora de seguros pelo bom atendimento. Desde 2018 quando eu fiz o primeiro contato, sempre bem dispostos e atencioso com o cliente. Me deram várias sugestões de seguros e tiraram todas as minhas dúvidas. Por fim, consegue fazer a proteção da minha moto e ficar tranquilo. Eu recomendo 👏👏🔑🛵🔓🔒',
+    text: "Olá, gostaria de recomendar a empresa Cantares corretora de seguros pelo bom atendimento. Desde 2018 quando eu fiz o primeiro contato, sempre bem dispostos e atencioso com o cliente. Me deram várias sugestões de seguros e tiraram todas as minhas dúvidas. Por fim, consegue fazer a proteção da minha moto e ficar tranquilo. Eu recomendo 👏👏🔑🛵🔓🔒",
   },
   {
-    name: 'Vinicius Rodrigues',
+    name: "Vinicius Rodrigues",
     rating: 5,
-    text: 'Contrato renovado é muito grato pelo serviço de vocês, estou com vocês tem 4 anos indo pro 5ª agora já e feliz até o momento.',
+    text: "Contrato renovado é muito grato pelo serviço de vocês, estou com vocês tem 4 anos indo pro 5ª agora já e feliz até o momento.",
   },
 ];
 
 function StarRating({ rating }: { rating: number }) {
   return (
-    <div className="flex gap-1" aria-label={`Avaliação: ${rating} de 5 estrelas`}>
+    <div
+      className="flex gap-1"
+      aria-label={`Avaliação: ${rating} de 5 estrelas`}
+    >
       {[...Array(5)].map((_, i) => (
         <Star
           key={i}
-          className={`w-5 h-5 ${i < rating ? 'text-yellow-500 fill-yellow-500' : 'text-gray-300'}`}
+          className={`w-5 h-5 ${
+            i < rating ? "text-yellow-500 fill-yellow-500" : "text-gray-300"
+          }`}
         />
       ))}
     </div>
@@ -52,7 +56,7 @@ export function TestimonialsSection() {
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {testimonials.map((testimonial, index) => (
-            <article 
+            <article
               key={testimonial.name}
               className="card-testimonial animate-fade-in-up"
               style={{ animationDelay: `${index * 150}ms` }}
@@ -67,40 +71,33 @@ export function TestimonialsSection() {
                 <h3 className="font-semibold text-foreground">
                   {testimonial.name}
                 </h3>
-                <p className="text-sm text-muted-foreground">Cliente Cantares</p>
+                <p className="text-sm text-muted-foreground">
+                  Cliente Cantares
+                </p>
               </footer>
             </article>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center">
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-cta text-lg inline-flex"
-          >
-            <MessageCircle className="w-6 h-6" />
-            Simular e Contratar
-            <ArrowRight className="w-5 h-5" />
-          </a>
-          
-          <div className="flex items-center justify-center gap-4 mt-6">
-            <img 
-              src={logoCantares} 
-              alt="Cantares Corretora" 
-              className="h-8 w-auto opacity-70"
-              loading="lazy"
-            />
-            <img 
-              src={logoSuhai} 
-              alt="Suhai Seguradora" 
-              className="h-7 w-auto opacity-70"
-              loading="lazy"
-            />
-          </div>
-        </div>
+        <CallToAction
+          href={WHATSAPP_LINK}
+          title="Simular e Contratar"
+          leftIcon={<MessageCircle className="w-6 h-6" />}
+          rightIcon={<ArrowRight className="w-5 h-5" />}
+          logos={[
+            {
+              src: logoCantares,
+              alt: "Cantares Corretora",
+              className: "h-12 w-auto opacity-1 rounded-sm",
+            },
+            {
+              src: logoSuhai,
+              alt: "Suhai Seguradora",
+              className: "h-14 w-auto opacity-1",
+            },
+          ]}
+        />
       </div>
     </section>
   );

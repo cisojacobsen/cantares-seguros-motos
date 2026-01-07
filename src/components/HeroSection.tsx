@@ -1,9 +1,8 @@
-import { MessageCircle, ArrowRight } from 'lucide-react';
-import casalMoto from '@/assets/casal-andando-de-moto.png';
-import logoCantares from '@/assets/logo-cantares-corretora.png';
-import logoSuhai from '@/assets/logo-suhai-seguradora.png';
-
-const WHATSAPP_LINK = "https://wa.me/5511930290043?text=ROBSON%20-%20CONSULTOR%20EM%20SEGUROS";
+import { MessageCircle, ArrowRight } from "lucide-react";
+import { WHATSAPP_LINK } from "./CallToAction";
+import casalMoto from "@/assets/casal-andando-de-moto.png";
+import logoCantares from "@/assets/logo-cantares-corretora.png";
+import logoSuhai from "@/assets/logo-suhai-seguradora.png";
 
 export function HeroSection() {
   return (
@@ -24,18 +23,20 @@ export function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-2 mb-6 animate-fade-in-up">
             <span className="w-2 h-2 bg-lime-dark rounded-full animate-pulse" />
-            <span className="text-sm font-medium text-foreground">Corretor Autorizado Suhai</span>
+            <span className="text-sm font-medium text-foreground">
+              Corretor Autorizado Suhai
+            </span>
           </div>
 
           {/* Main Heading */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-in-up delay-100">
-            Proteja sua moto com o seguro que{' '}
+            Proteja sua moto com o seguro que{" "}
             <span className="text-gradient">cabe no seu bolso</span>
           </h2>
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in-up delay-200">
-            Seguro de moto para todas as cilindradas a partir de{' '}
+            Seguro de moto para todas as cilindradas a partir de{" "}
             <strong className="text-foreground">R$ 79,00/mês</strong>.
             <br />
             Simples, rápido e sem burocracia.
@@ -60,18 +61,18 @@ export function HeroSection() {
             <span className="text-sm text-muted-foreground">Parceiros:</span>
             <div className="flex items-center gap-4">
               <div className="logo-partner">
-                <img 
-                  src={logoCantares} 
-                  alt="Cantares Corretora" 
-                  className="h-8 w-auto"
+                <img
+                  src={logoCantares}
+                  alt="Cantares Corretora"
+                  className="h-10 w-auto"
                   loading="lazy"
                 />
               </div>
               <div className="logo-partner">
-                <img 
-                  src={logoSuhai} 
-                  alt="Suhai Seguradora" 
-                  className="h-7 w-auto"
+                <img
+                  src={logoSuhai}
+                  alt="Suhai Seguradora"
+                  className="h-14 w-auto"
                   loading="lazy"
                 />
               </div>
