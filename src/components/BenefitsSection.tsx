@@ -89,12 +89,12 @@ export function BenefitsSection() {
             {
               src: logoCantares,
               alt: "Cantares Corretora",
-              className: "h-12 w-auto opacity-1 rounded-sm",
+              className: "h-14 w-auto opacity-1 rounded-sm",
             },
             {
               src: logoSuhai,
               alt: "Suhai Seguradora",
-              className: "h-14 w-auto opacity-1",
+              className: "h-16 w-auto opacity-1",
             },
           ]}
         />

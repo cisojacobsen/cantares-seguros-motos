@@ -34,8 +34,8 @@ export function Footer() {
                 />
               </div>
               <p className="text-background/70 mb-4 max-w-md">
-                Cantares é corretor autorizado da Suhai Seguros, oferecendo as
-                melhores soluções em seguro de motos para todo o Brasil.
+                Cantares é uma Corretora Autorizada da Suhai Seguros, oferecendo
+                as melhores soluções em seguro de motos para todo o Brasil.
               </p>
             </div>
 
@@ -124,7 +124,7 @@ export function Footer() {
       {/* Legal Footer */}
       <div className="border-t border-background/10">
         <div className="container-narrow mx-auto px-4 py-6">
-          <p className="text-center text-sm text-background/50">
+          <p className="text-center text-xs text-background/50">
             CANTARES ADMINISTRADORA E CORRETORA DE SEGUROS LTDA
             <br />
             CNPJ nº 05.363.029/0001-51 | Registrada na SUSEP sob o nº 202046281

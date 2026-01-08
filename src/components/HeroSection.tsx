@@ -24,7 +24,7 @@ export function HeroSection() {
           <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-2 mb-6 animate-fade-in-up">
             <span className="w-2 h-2 bg-lime-dark rounded-full animate-pulse" />
             <span className="text-sm font-medium text-foreground">
-              Corretor Autorizado Suhai
+              Corretora Autorizada Suhai
             </span>
           </div>
 
@@ -57,7 +57,7 @@ export function HeroSection() {
           </div>
 
           {/* Partner Logos */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-in-up delay-400">
+          <div className="hidden md:flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-in-up delay-400">
             <span className="text-sm text-muted-foreground">Parceiros:</span>
             <div className="flex items-center gap-4">
               <div className="logo-partner">
