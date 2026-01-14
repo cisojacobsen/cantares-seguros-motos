@@ -92,17 +92,17 @@ export function CoverageSection() {
 
         {/* Features List */}
         <div className="bg-card rounded-2xl p-6 md:p-8 border border-border mb-8">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center md:text-left">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-col md:flex-row items-left justify-center gap-6 text-center md:items-center md:text-left">
+            <div className="flex items-left gap-3">
               <CheckCircle className="w-6 h-6 text-lime-dark" />
-              <span className="text-foreground font-medium">
+              <span className="text-foreground font-medium text-left">
                 Guincho e assistência 24h em todo o Brasil
               </span>
             </div>
             <div className="h-px w-full md:w-px md:h-6 bg-border" />
-            <div className="flex items-center gap-3">
+            <div className="flex items-left gap-3">
               <CheckCircle className="w-6 h-6 text-lime-dark" />
-              <span className="text-foreground font-medium">
+              <span className="text-foreground font-medium text-left">
                 Simulação gratuita e imediata, sem compromisso
               </span>
             </div>
@@ -110,7 +110,7 @@ export function CoverageSection() {
         </div>
 
         {/* Timeline Steps - Moved before CTA */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-10">
+        <div className="w-max flex flex-col md:flex-row items-left mx-auto px-20 justify-center gap-4 md:gap-8 mb-10">
           {steps.map((step, index) => (
             <div key={step.number} className="flex items-center gap-4">
               <div className="flex items-center gap-3">
