@@ -6,11 +6,17 @@ import {
   Instagram,
   Facebook,
 } from "lucide-react";
-import { WHATSAPP_LINK } from "./CallToAction";
 import logoCantares from "@/assets/logo-cantares-corretora.png";
 import logoSuhai from "@/assets/logo-suhai-seguradora.png";
 
-export function Footer() {
+interface FooterProps {
+  onModalOpen?: () => void;
+}
+
+export function Footer({ onModalOpen }: FooterProps) {
+  const WHATSAPP_LINK =
+    "https://wa.me/5511930290043?text=ROBSON%20-%20CONSULTOR%20EM%20SEGUROS";
+
   return (
     <footer className="bg-foreground text-background">
       {/* Main Footer */}
@@ -53,15 +59,13 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href={WHATSAPP_LINK}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
+                  <button
+                    onClick={onModalOpen}
+                    className="flex items-center gap-3 text-background/70 hover:text-background transition-colors w-full"
                   >
                     <MessageCircle className="w-5 h-5" />
                     (11) 93029-0043
-                  </a>
+                  </button>
                 </li>
                 <li>
                   <a

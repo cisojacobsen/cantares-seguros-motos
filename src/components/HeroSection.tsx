@@ -1,10 +1,13 @@
-import { MessageCircle, ArrowRight } from "lucide-react";
-import { WHATSAPP_LINK } from "./CallToAction";
+import { MessageCircle } from "lucide-react";
 import casalMoto from "@/assets/casal-andando-de-moto.png";
 import logoCantares from "@/assets/logo-cantares-corretora.png";
 import logoSuhai from "@/assets/logo-suhai-seguradora.png";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  onModalOpen?: () => void;
+}
+
+export function HeroSection({ onModalOpen }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Image */}
@@ -44,16 +47,13 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-10 animate-fade-in-up delay-300">
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-cta text-lg"
+            <button
+              onClick={onModalOpen}
+              className="btn-cta text-lg inline-flex"
             >
               <MessageCircle className="w-6 h-6" />
               Simular e Contratar
-              <ArrowRight className="w-5 h-5" />
-            </a>
+            </button>
           </div>
 
           {/* Partner Logos */}

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
-import { WHATSAPP_LINK } from "./CallToAction";
 import logoCantares from "@/assets/logo-cantares-corretora.png";
 import logoSuhai from "@/assets/logo-suhai-seguradora.png";
 
@@ -11,7 +10,11 @@ const navItems = [
   { label: "Contato", href: "#contato" },
 ];
 
-export function Header() {
+interface HeaderProps {
+  onModalOpen?: () => void;
+}
+
+export function Header({ onModalOpen }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -53,16 +56,14 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="flex items-center gap-4">
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={onModalOpen}
               className="btn-cta text-sm hidden md:flex md:text-base py-2 md:py-3 px-4 md:px-6"
-              aria-label="Contato via WhatsApp"
+              aria-label="Abrir formulário de contato"
             >
               <MessageCircle className="w-5 h-5" />
               <span className="hidden sm:inline">WhatsApp</span>
-            </a>
+            </button>
 
             {/* Mobile Menu Button */}
             <button

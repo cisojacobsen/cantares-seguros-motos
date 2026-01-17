@@ -1,7 +1,7 @@
-import { Star, MessageCircle, ArrowRight } from "lucide-react";
+import { Star, MessageCircle } from "lucide-react";
 import logoCantares from "@/assets/logo-cantares-corretora.png";
 import logoSuhai from "@/assets/logo-suhai-seguradora.png";
-import { CallToAction, WHATSAPP_LINK } from "./CallToAction";
+import { CallToAction } from "./CallToAction";
 
 const testimonials = [
   {
@@ -39,7 +39,11 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
-export function TestimonialsSection() {
+interface TestimonialsSectionProps {
+  onModalOpen?: () => void;
+}
+
+export function TestimonialsSection({ onModalOpen }: TestimonialsSectionProps) {
   return (
     <section id="depoimentos" className="section-padding bg-background">
       <div className="container-narrow mx-auto">
@@ -81,10 +85,10 @@ export function TestimonialsSection() {
 
         {/* CTA */}
         <CallToAction
-          href={WHATSAPP_LINK}
+          useModal
+          onModalOpen={onModalOpen}
           title="Simular e Contratar"
           leftIcon={<MessageCircle className="w-6 h-6" />}
-          rightIcon={<ArrowRight className="w-5 h-5" />}
           logos={[
             {
               src: logoCantares,

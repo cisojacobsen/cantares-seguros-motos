@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Send, CheckCircle } from "lucide-react";
 import videoCorretor from "@/assets/video-corretor-suhai-autorizado.mp4";
 import posterCorretor from "@/assets/img-share.webp";
+import { WHATSAPP_NUMBER } from "./CallToAction";
 
 const insuranceTypes = [
   "Roubo e furto",
@@ -23,6 +24,35 @@ export function LeadFormSection() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  // Helper: Extract first and last name from full name
+  const extractNames = (fullName: string) => {
+    const parts = fullName.trim().split(" ");
+    const firstName = parts[0];
+    const lastName = parts.slice(1).join(" ");
+    return { firstName, lastName };
+  };
+
+  // Helper: Format phone with DDI 55 and plus sign
+  const formatPhoneWithDDI = (phone: string) => {
+    const numbersOnly = phone.replace(/\D/g, "");
+    return `+55${numbersOnly}`;
+  };
+
+  // Helper: Generate event ID
+  const generateEventId = () => {
+    return crypto.randomUUID();
+  };
+
+  // Helper: Push event to DataLayer
+  const pushToDataLayer = (eventName: string, eventData: any) => {
+    if (typeof window !== "undefined" && (window as any).dataLayer) {
+      (window as any).dataLayer.push({
+        event: eventName,
+        ...eventData,
+      });
+    }
+  };
 
   // Lazy-load video source when the element enters the viewport.
   useEffect(() => {
@@ -134,19 +164,49 @@ export function LeadFormSection() {
     e.preventDefault();
     setIsLoading(true);
 
+    // Extract name parts
+    const { firstName, lastName } = extractNames(formData.name);
+    const phoneWithDDI = formatPhoneWithDDI(formData.phone);
+    const eventId = generateEventId();
+
+    // Push lead_submit event to DataLayer
+    pushToDataLayer("lead_submit", {
+      user_data: {
+        email: formData.email,
+        phone_number: phoneWithDDI,
+        address: {
+          first_name: firstName,
+          last_name: lastName,
+        },
+      },
+      event_id: eventId,
+    });
+
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     // Redirect to WhatsApp with form data
-    const message = `Olá! Meu nome é ${formData.name}. 
+    const message = `Olá! Meu nome é ${formData.name}.
+Gostaria de saber mais sobre o seguro de moto. 
 Email: ${formData.email}
 Telefone: ${formData.phone}
-Interesse: ${formData.insuranceType}
+Interesse: ${formData.insuranceType}`;
 
-Gostaria de saber mais sobre o seguro de moto.`;
+    // Push whatsapp_redirect event to DataLayer
+    pushToDataLayer("whatsapp_redirect", {
+      user_data: {
+        email: formData.email,
+        phone_number: phoneWithDDI,
+        address: {
+          first_name: firstName,
+          last_name: lastName,
+        },
+      },
+      event_id: eventId,
+    });
 
     window.open(
-      `https://wa.me/5511930290043?text=${encodeURIComponent(message)}`,
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
       "_blank"
     );
 

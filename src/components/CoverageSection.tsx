@@ -4,12 +4,12 @@ import {
   Flame,
   Wrench,
   MessageCircle,
-  ArrowRight,
   CheckCircle,
+  ArrowRight,
 } from "lucide-react";
 import logoCantares from "@/assets/logo-cantares-corretora.png";
 import logoSuhai from "@/assets/logo-suhai-seguradora.png";
-import { CallToAction, WHATSAPP_LINK } from "./CallToAction";
+import { CallToAction } from "./CallToAction";
 
 const steps = [
   { number: "1", title: "Cotação", description: "Simule grátis online" },
@@ -44,7 +44,11 @@ const coverages = [
   },
 ];
 
-export function CoverageSection() {
+interface CoverageSectionProps {
+  onModalOpen?: () => void;
+}
+
+export function CoverageSection({ onModalOpen }: CoverageSectionProps) {
   return (
     <section id="coberturas" className="section-padding bg-muted/30">
       <div className="container-narrow mx-auto">
@@ -135,10 +139,10 @@ export function CoverageSection() {
 
         {/* CTA */}
         <CallToAction
-          href={WHATSAPP_LINK}
+          useModal
+          onModalOpen={onModalOpen}
           title="Falar com um especialista"
           leftIcon={<MessageCircle className="w-6 h-6" />}
-          rightIcon={<ArrowRight className="w-5 h-5" />}
           logos={[
             {
               src: logoCantares,

@@ -6,11 +6,10 @@ import {
   Users,
   Sparkles,
   MessageCircle,
-  ArrowRight,
 } from "lucide-react";
 import logoCantares from "@/assets/logo-cantares-corretora.png";
 import logoSuhai from "@/assets/logo-suhai-seguradora.png";
-import { CallToAction, WHATSAPP_LINK } from "./CallToAction";
+import { CallToAction } from "./CallToAction";
 
 const benefits = [
   {
@@ -45,7 +44,11 @@ const benefits = [
   },
 ];
 
-export function BenefitsSection() {
+interface BenefitsSectionProps {
+  onModalOpen?: () => void;
+}
+
+export function BenefitsSection({ onModalOpen }: BenefitsSectionProps) {
   return (
     <section id="beneficios" className="section-padding bg-muted/30">
       <div className="container-narrow mx-auto">
@@ -81,10 +84,10 @@ export function BenefitsSection() {
 
         {/* CTA */}
         <CallToAction
-          href={WHATSAPP_LINK}
+          useModal
+          onModalOpen={onModalOpen}
           title="Falar com um especialista"
           leftIcon={<MessageCircle className="w-6 h-6" />}
-          rightIcon={<ArrowRight className="w-5 h-5" />}
           logos={[
             {
               src: logoCantares,
