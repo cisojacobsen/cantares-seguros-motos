@@ -74,11 +74,11 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
       return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
     if (numbers.length <= 11)
       return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(
-        7
+        7,
       )}`;
     return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(
       7,
-      11
+      11,
     )}`;
   };
 
@@ -109,7 +109,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
     const { name, value } = e.target;
 
@@ -146,7 +146,6 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     // Extract name parts
     const { firstName, lastName } = extractNames(formData.name);
     const phoneWithDDI = formatPhoneWithDDI(formData.phone);
-    const eventId = generateEventId();
 
     // Push lead_submit event to DataLayer
     pushToDataLayer("lead_submit", {
@@ -158,7 +157,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           last_name: lastName,
         },
       },
-      event_id: eventId,
+      event_id: generateEventId(),
     });
 
     // Simulate form submission
@@ -180,12 +179,12 @@ Interesse: ${formData.insuranceType}`;
           last_name: lastName,
         },
       },
-      event_id: eventId,
+      event_id: generateEventId(),
     });
 
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
-      "_blank"
+      "_blank",
     );
 
     setIsSubmitted(true);

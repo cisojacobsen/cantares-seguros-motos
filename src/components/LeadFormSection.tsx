@@ -70,7 +70,7 @@ export function LeadFormSection() {
             if (entry.isIntersecting) {
               // Only add source if it doesn't exist yet
               const existingSource = videoEl.querySelector(
-                "source"
+                "source",
               ) as HTMLSourceElement | null;
               if (!existingSource?.src) {
                 const source = document.createElement("source");
@@ -84,7 +84,7 @@ export function LeadFormSection() {
             }
           });
         },
-        { rootMargin: "200px" }
+        { rootMargin: "200px" },
       );
 
       observer.observe(videoEl);
@@ -134,16 +134,16 @@ export function LeadFormSection() {
       return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
     if (numbers.length <= 11)
       return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(
-        7
+        7,
       )}`;
     return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(
       7,
-      11
+      11,
     )}`;
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
     const { name, value } = e.target;
 
@@ -167,7 +167,6 @@ export function LeadFormSection() {
     // Extract name parts
     const { firstName, lastName } = extractNames(formData.name);
     const phoneWithDDI = formatPhoneWithDDI(formData.phone);
-    const eventId = generateEventId();
 
     // Push lead_submit event to DataLayer
     pushToDataLayer("lead_submit", {
@@ -179,7 +178,7 @@ export function LeadFormSection() {
           last_name: lastName,
         },
       },
-      event_id: eventId,
+      event_id: generateEventId(),
     });
 
     // Simulate form submission
@@ -202,12 +201,12 @@ Interesse: ${formData.insuranceType}`;
           last_name: lastName,
         },
       },
-      event_id: eventId,
+      event_id: generateEventId(),
     });
 
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
-      "_blank"
+      "_blank",
     );
 
     setIsLoading(false);
