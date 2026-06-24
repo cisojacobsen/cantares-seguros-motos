@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Menu, X, MessageCircle } from "lucide-react";
 import logoCantares from "@/assets/logo-cantares-corretora.png";
 import logoSuhai from "@/assets/logo-suhai-seguradora.png";
@@ -16,6 +17,8 @@ interface HeaderProps {
 
 export function Header({ onModalOpen }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const isSeguroSuhai = location.pathname === "/suhai";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -26,16 +29,20 @@ export function Header({ onModalOpen }: HeaderProps) {
             <img
               src={logoCantares}
               alt="Cantares Corretora de Seguros"
-              className="h-16 md:h-16 w-auto"
+              className="h-16 md:h-16 w-auto rounded-sm"
               loading="eager"
             />
-            <div className="h-8 w-px bg-border" />
-            <img
-              src={logoSuhai}
-              alt="Suhai Seguradora - Corretor Autorizado"
-              className="h-16 md:h-16 w-auto"
-              loading="eager"
-            />
+            {isSeguroSuhai && (
+              <>
+                <div className="h-8 w-px bg-border" />
+                <img
+                  src={logoSuhai}
+                  alt="Suhai Seguradora - Corretor Autorizado"
+                  className="h-16 md:h-16 w-auto"
+                  loading="eager"
+                />
+              </>
+            )}
           </div>
 
           {/* Desktop Navigation */}

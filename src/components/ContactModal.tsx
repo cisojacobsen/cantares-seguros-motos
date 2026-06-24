@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { X, MessageCircle } from "lucide-react";
 import { WHATSAPP_NUMBER } from "./CallToAction";
 import logoCantares from "@/assets/logo-cantares-corretora.png";
@@ -205,6 +206,9 @@ Interesse: ${formData.insuranceType}`;
 
   if (!isOpen) return null;
 
+  const location = useLocation();
+  const isSeguroSuhai = location.pathname === "/suhai";
+
   return (
     <>
       {/* Backdrop */}
@@ -236,12 +240,16 @@ Interesse: ${formData.insuranceType}`;
                 className="h-14 w-auto md:h-14 object-contain"
                 loading="lazy"
               />
-              <img
-                src={logoSuhai}
-                alt="Logo Suhai"
-                className="h-16 w-auto md:h-16 object-contain"
-                loading="lazy"
-              />
+              {isSeguroSuhai && (
+                <>
+                  <img
+                    src={logoSuhai}
+                    alt="Logo Suhai"
+                    className="h-16 w-auto md:h-16 object-contain"
+                    loading="lazy"
+                  />
+                </>
+              )}
             </div>
 
             {/* Title and Subtitle */}
@@ -365,7 +373,7 @@ Interesse: ${formData.insuranceType}`;
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full mt-6 px-6 py-3 bg-[#25D366] hover:bg-[#20ba58] disabled:bg-gray-400 text-white font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors text-sm md:text-base"
+                  className="w-full btn-cta mt-6 px-6 py-3 bg-[#25D366] hover:bg-[#20ba58] disabled:bg-gray-400 text-white font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors text-sm md:text-base"
                 >
                   <MessageCircle className="w-5 h-5" />
                   {isLoading ? "Processando..." : "Continuar no WhatsApp"}

@@ -9,18 +9,17 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { ContactModal } from "@/components/ContactModal";
 
-const SeguroMotos = () => {
+const SuhaiSeguroMotos = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background theme-suhai">
       <Header onModalOpen={() => setIsModalOpen(true)} />
       <main>
         <HeroSection onModalOpen={() => setIsModalOpen(true)} />
         <BenefitsSection onModalOpen={() => setIsModalOpen(true)} />
-        <CoverageSection onModalOpen={() => setIsModalOpen(true)} />
-        {/* <PartnersSection onModalOpen={() => setIsModalOpen(true)} /> */}
         <TestimonialsSection onModalOpen={() => setIsModalOpen(true)} />
+        <CoverageSection onModalOpen={() => setIsModalOpen(true)} />
         <LeadFormSection />
       </main>
       <Footer onModalOpen={() => setIsModalOpen(true)} />
@@ -33,4 +32,4 @@ const SeguroMotos = () => {
   );
 };
 
-export default SeguroMotos;
+export default SuhaiSeguroMotos;

@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import logoCantares from "@/assets/logo-cantares-corretora.png";
 import logoSuhai from "@/assets/logo-suhai-seguradora.png";
+import { useLocation } from "react-router-dom";
 
 interface FooterProps {
   onModalOpen?: () => void;
@@ -16,6 +17,8 @@ interface FooterProps {
 export function Footer({ onModalOpen }: FooterProps) {
   const WHATSAPP_LINK =
     "https://wa.me/5511930290043?text=ROBSON%20-%20CONSULTOR%20EM%20SEGUROS";
+  const location = useLocation();
+  const isSeguroSuhai = location.pathname === "/suhai";
 
   return (
     <footer className="bg-foreground text-background">
@@ -32,16 +35,21 @@ export function Footer({ onModalOpen }: FooterProps) {
                   className="h-16 w-auto rounded-sm"
                   loading="lazy"
                 />
-                <img
-                  src={logoSuhai}
-                  alt="Suhai Seguradora"
-                  className="h-20 w-auto"
-                  loading="lazy"
-                />
+                {isSeguroSuhai && (
+                  <>
+                    <img
+                      src={logoSuhai}
+                      alt="Suhai Seguradora"
+                      className="h-20 w-auto"
+                      loading="lazy"
+                    />
+                  </>
+                )}
               </div>
               <p className="text-background/70 mb-4 max-w-md">
-                Cantares é uma Corretora Autorizada da Suhai Seguros, oferecendo
-                as melhores soluções em seguro de motos para todo o Brasil.
+                {isSeguroSuhai
+                  ? "Cantares é uma Corretora Autorizada da Suhai Seguros, oferecendo as melhores soluções em seguro de motos para todo o Brasil."
+                  : "Cantares é uma Corretora parceira das principais Seguradoras de moto e a maior proteção veicular da América Latina, oferecendo as melhores soluções em seguro de motos para todo o Brasil."}
               </p>
             </div>
 
