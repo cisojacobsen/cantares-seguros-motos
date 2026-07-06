@@ -73,6 +73,12 @@
       hsl(192 84% 25%) 100%
     );
 
+    --gradient-primary-green: linear-gradient(
+      270deg,
+      hsl(82.11deg 55.88% 60%) 0%,
+      hsl(120deg 55% 47.06%) 100%
+    );
+
     --gradient-primary-from: hsl(199 72% 45%);
     --gradient-primary-to: hsl(192 84% 25%);
 
@@ -195,7 +201,7 @@
   /* CTA Button with gradient */
   .btn-cta {
     @apply inline-flex items-center justify-center gap-2 px-6 py-4 font-semibold text-lg rounded-xl transition-all duration-300;
-    background: var(--gradient-primary);
+    background: var(--gradient-primary-green);
     color: hsl(var(--porcelain));
     box-shadow: var(--shadow-cta);
   }

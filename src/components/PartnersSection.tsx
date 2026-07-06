@@ -24,10 +24,10 @@ const partners = [
   { src: parceira_tokio_marine, alt: "Tokio Marine Seguradora" },
   { src: parceira_itau_seguros, alt: "Itaú Seguros" },
   { src: parceira_bradesco_seguros, alt: "Bradesco Seguros" },
-  { src: parceira_apvs_brasil, alt: "APVS Brasil" },
-  { src: parceira_ituran_seguros, alt: "Ituran Seguros" },
   { src: parceira_mapfre_seguros, alt: "Mapfre Seguros" },
   { src: parceira_zurich, alt: "Zurich" },
+  { src: parceira_apvs_brasil, alt: "APVS Brasil" },
+  { src: parceira_ituran_seguros, alt: "Ituran Seguros" },
 ];
 
 interface PartnersSectionProps {
