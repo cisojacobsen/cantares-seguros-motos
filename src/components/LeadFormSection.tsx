@@ -1,7 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { Send, CheckCircle } from "lucide-react";
-import videoCorretor from "@/assets/video-corretor-suhai-autorizado.mp4";
-import posterCorretor from "@/assets/img-share.webp";
+import { useLocation } from "react-router-dom";
+import videoCorretorDefault from "@/assets/video-corretor-seguro-motos.mp4";
+import videoCorretorSuhai from "@/assets/video-corretor-suhai-autorizado.mp4";
+import posterCorretorDefault from "@/assets/thumb-video.webp";
+import posterCorretorSuhai from "@/assets/img-share.webp";
 import { WHATSAPP_NUMBER } from "./CallToAction";
 
 const insuranceTypes = [
@@ -12,6 +15,11 @@ const insuranceTypes = [
 ];
 
 export function LeadFormSection() {
+  const location = useLocation();
+  const isSuhaiPage = location.pathname === "/suhai";
+  const videoCorretor = isSuhaiPage ? videoCorretorSuhai : videoCorretorDefault;
+  const posterCorretor = isSuhaiPage ? posterCorretorSuhai : posterCorretorDefault;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
