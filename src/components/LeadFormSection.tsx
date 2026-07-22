@@ -18,7 +18,9 @@ export function LeadFormSection() {
   const location = useLocation();
   const isSuhaiPage = location.pathname === "/suhai";
   const videoCorretor = isSuhaiPage ? videoCorretorSuhai : videoCorretorDefault;
-  const posterCorretor = isSuhaiPage ? posterCorretorSuhai : posterCorretorDefault;
+  const posterCorretor = isSuhaiPage
+    ? posterCorretorSuhai
+    : posterCorretorDefault;
 
   const [formData, setFormData] = useState({
     name: "",
@@ -408,7 +410,7 @@ Interesse: ${formData.insuranceType}`;
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
-                      Solicitar cotação
+                      Falar com Especialistas
                     </>
                   )}
                 </button>

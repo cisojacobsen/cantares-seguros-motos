@@ -55,9 +55,9 @@ Desenvolvi um **modal de contato completo e profissional** que melhora significa
 Modal abre ao clicar em:
 
 - ✅ Botão "WhatsApp" do Header
-- ✅ Botão "Simular e Contratar" da Hero
+- ✅ Botão "Simular " da Hero
 - ✅ Botão "Falar com especialista" (Benefícios)
-- ✅ Botão "Simular e Contratar" (Depoimentos)
+- ✅ Botão "Simular " (Depoimentos)
 - ✅ Botão "Falar com especialista" (Coberturas)
 - ✅ Link WhatsApp do Footer
 - ✅ Botão flutuante verde

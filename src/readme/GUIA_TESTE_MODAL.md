@@ -25,7 +25,7 @@ Existem vários ao longo da página:
 - Na seção de Depoimentos
 - No Footer
 
-### 4️⃣ **Botão "Simular e Contratar" da Hero**
+### 4️⃣ **Botão "Simular" da Hero**
 
 - No topo da página, grande botão verde
 

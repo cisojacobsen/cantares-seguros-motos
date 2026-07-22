@@ -67,9 +67,9 @@ Mensagens de erro personalizadas que desaparecem quando o usuário começa a dig
 
 Todos os componentes abaixo foram atualizados para aceitar `onModalOpen`:
 
-- **HeroSection** - Botão "Simular e Contratar"
+- **HeroSection** - Botão "Simular "
 - **BenefitsSection** - CTA "Falar com um especialista"
-- **TestimonialsSection** - CTA "Simular e Contratar"
+- **TestimonialsSection** - CTA "Simular "
 - **CoverageSection** - CTA "Falar com um especialista"
 - **Footer** - Botão de WhatsApp na seção "Fale Conosco"
 

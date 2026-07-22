@@ -71,7 +71,7 @@ export function PartnersSection({ onModalOpen }: PartnersSectionProps) {
         <CallToAction
           useModal
           onModalOpen={onModalOpen}
-          title="Simular meu Seguro"
+          title="Simular"
           leftIcon={<MessageCircle className="w-6 h-6" />}
           logos={[
             {

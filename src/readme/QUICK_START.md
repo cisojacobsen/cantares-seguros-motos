@@ -22,7 +22,7 @@ O site estará disponível em: **http://localhost:8081/suhai-seguro-motos/**
 Clique em qualquer um dos botões abaixo para ver o modal em ação:
 
 - ✅ Botão "WhatsApp" no header
-- ✅ Botão "Simular e Contratar" na hero
+- ✅ Botão "Simular " na hero
 - ✅ Botão "Falar com um especialista" (várias seções)
 - ✅ Botão flutuante verde de WhatsApp
 

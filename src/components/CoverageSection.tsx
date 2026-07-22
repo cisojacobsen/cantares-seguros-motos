@@ -1,6 +1,6 @@
 import {
   Shield,
-  Car,
+  Bike,
   Flame,
   Wrench,
   MessageCircle,
@@ -25,7 +25,7 @@ const coverages = [
     popular: false,
   },
   {
-    icon: Car,
+    icon: Bike,
     title: "Roubo, furto e perda total",
     description: "Cobertura completa incluindo acidentes com perda total.",
     popular: true,

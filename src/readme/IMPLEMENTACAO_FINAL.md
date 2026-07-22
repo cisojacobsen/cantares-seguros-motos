@@ -212,7 +212,7 @@ Botão "WhatsApp" → Abre modal
 ### Hero Section
 
 ```
-Botão "Simular e Contratar" → Abre modal
+Botão "Simular" → Abre modal
 ```
 
 ### Benefits Section
@@ -224,7 +224,7 @@ Botão "Falar com um especialista" → Abre modal
 ### Testimonials Section
 
 ```
-Botão "Simular e Contratar" → Abre modal
+Botão "Simular" → Abre modal
 ```
 
 ### Coverage Section

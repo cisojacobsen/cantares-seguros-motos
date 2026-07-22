@@ -58,7 +58,7 @@ export function HeroSection({ onModalOpen }: HeroSectionProps) {
               className="btn-cta text-lg inline-flex"
             >
               <MessageCircle className="w-6 h-6" />
-              Simular e Contratar
+              Simular
             </button>
           </div>
 

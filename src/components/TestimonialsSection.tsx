@@ -87,7 +87,7 @@ export function TestimonialsSection({ onModalOpen }: TestimonialsSectionProps) {
         <CallToAction
           useModal
           onModalOpen={onModalOpen}
-          title="Simular e Contratar"
+          title="Simular"
           leftIcon={<MessageCircle className="w-6 h-6" />}
           logos={[
             {
