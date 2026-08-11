@@ -289,7 +289,7 @@ Interesse: ${formData.insuranceType}`;
                 Vamos iniciar sua proteção
               </h2>
               <p className="text-lg text-muted-foreground">
-                Preencha o formulário e receba sua cotação personalizada
+                Preencha e fale com especialista
               </p>
             </div>
           </div>

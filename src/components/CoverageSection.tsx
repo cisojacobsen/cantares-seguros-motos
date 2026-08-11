@@ -138,10 +138,10 @@ export function CoverageSection({ onModalOpen }: CoverageSectionProps) {
         </div>
 
         {/* CTA */}
-        <CallToAction
+        {/* <CallToAction
           useModal
           onModalOpen={onModalOpen}
-          title="Falar com um especialista"
+          title="Fale com um Especialista"
           leftIcon={<MessageCircle className="w-6 h-6" />}
           logos={[
             {
@@ -155,7 +155,7 @@ export function CoverageSection({ onModalOpen }: CoverageSectionProps) {
               className: "h-16 w-auto opacity-1",
             },
           ]}
-        />
+        /> */}
       </div>
     </section>
   );

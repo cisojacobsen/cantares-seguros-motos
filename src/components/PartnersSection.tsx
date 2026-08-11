@@ -68,7 +68,7 @@ export function PartnersSection({ onModalOpen }: PartnersSectionProps) {
         </div>
 
         {/* CTA */}
-        <CallToAction
+        {/* <CallToAction
           useModal
           onModalOpen={onModalOpen}
           title="Simular"
@@ -85,7 +85,7 @@ export function PartnersSection({ onModalOpen }: PartnersSectionProps) {
               className: "h-16 w-auto opacity-1",
             },
           ]}
-        />
+        /> */}
       </div>
     </section>
   );

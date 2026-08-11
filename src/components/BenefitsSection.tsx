@@ -83,10 +83,10 @@ export function BenefitsSection({ onModalOpen }: BenefitsSectionProps) {
         </div>
 
         {/* CTA */}
-        <CallToAction
+        {/* <CallToAction
           useModal
           onModalOpen={onModalOpen}
-          title="Falar com um especialista"
+          title="Fale com um especialista"
           leftIcon={<MessageCircle className="w-6 h-6" />}
           logos={[
             {
@@ -100,7 +100,7 @@ export function BenefitsSection({ onModalOpen }: BenefitsSectionProps) {
               className: "h-16 w-auto opacity-1",
             },
           ]}
-        />
+        /> */}
       </div>
     </section>
   );

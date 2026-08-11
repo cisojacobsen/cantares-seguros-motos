@@ -52,7 +52,7 @@ export function HeroSection({ onModalOpen }: HeroSectionProps) {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-10 animate-fade-in-up delay-300">
+          {/* <div className="flex flex-col sm:flex-row gap-4 mb-10 animate-fade-in-up delay-300">
             <button
               onClick={onModalOpen}
               className="btn-cta text-lg inline-flex"
@@ -60,10 +60,10 @@ export function HeroSection({ onModalOpen }: HeroSectionProps) {
               <MessageCircle className="w-6 h-6" />
               Simular
             </button>
-          </div>
+          </div> */}
 
           {/* Partner Logos */}
-          {isSeguroSuhai && (
+          {/* {isSeguroSuhai && (
             <>
               <div className="hidden md:flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-in-up delay-400">
                 <span className="text-sm text-muted-foreground">
@@ -89,7 +89,7 @@ export function HeroSection({ onModalOpen }: HeroSectionProps) {
                 </div>
               </div>
             </>
-          )}
+          )} */}
         </div>
       </div>
 

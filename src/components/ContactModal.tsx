@@ -257,7 +257,7 @@ Interesse: ${formData.insuranceType}`;
               Vamos iniciar sua proteção
             </h2>
             <p className="text-center text-sm md:text-base text-gray-600">
-              Preencha para falar com um corretor agora.
+              Preencha e fale com um especialista agora.
             </p>
           </div>
 
@@ -376,7 +376,7 @@ Interesse: ${formData.insuranceType}`;
                   className="w-full btn-cta mt-6 px-6 py-3 bg-[#25D366] hover:bg-[#20ba58] disabled:bg-gray-400 text-white font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors text-sm md:text-base"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  {isLoading ? "Processando..." : "Continuar no WhatsApp"}
+                  {isLoading ? "Processando..." : "Falar com Especialistas"}
                 </button>
 
                 {/* Privacy Notice */}

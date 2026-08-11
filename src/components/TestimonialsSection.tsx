@@ -84,7 +84,7 @@ export function TestimonialsSection({ onModalOpen }: TestimonialsSectionProps) {
         </div>
 
         {/* CTA */}
-        <CallToAction
+        {/* <CallToAction
           useModal
           onModalOpen={onModalOpen}
           title="Simular"
@@ -101,7 +101,7 @@ export function TestimonialsSection({ onModalOpen }: TestimonialsSectionProps) {
               className: "h-16 w-auto opacity-1",
             },
           ]}
-        />
+        /> */}
       </div>
     </section>
   );
