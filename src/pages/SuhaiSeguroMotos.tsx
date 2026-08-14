@@ -17,10 +17,10 @@ const SuhaiSeguroMotos = () => {
       <Header onModalOpen={() => setIsModalOpen(true)} />
       <main>
         <HeroSection onModalOpen={() => setIsModalOpen(true)} />
+        <LeadFormSection />
         <BenefitsSection onModalOpen={() => setIsModalOpen(true)} />
         <TestimonialsSection onModalOpen={() => setIsModalOpen(true)} />
         <CoverageSection onModalOpen={() => setIsModalOpen(true)} />
-        <LeadFormSection />
       </main>
       <Footer onModalOpen={() => setIsModalOpen(true)} />
       <WhatsAppFloat useModal onClick={() => setIsModalOpen(true)} />
